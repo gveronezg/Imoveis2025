@@ -8,10 +8,11 @@ import time
 import csv
 import os
 
-def colher_dados():
-    pagina = 1  # contador de páginas
-    arquivo_csv = "imoveis.csv"
+from config.config import data_save
 
+def colher_dados(arquivo_csv):
+    pagina = 1  # contador de páginas
+    
     # Cria o CSV com cabeçalho, se ainda não existir
     if not os.path.exists(arquivo_csv):
         with open(arquivo_csv, mode="w", newline="", encoding="utf-8") as f:
@@ -84,5 +85,4 @@ def colher_dados():
         # Pequena pausa para evitar bloqueio do site
         time.sleep(2)
 
-# Executa a função
-colher_dados()
+        data_save(PASTA_DADOS="data", NOME_ARQUIVO="imoveis.csv")
