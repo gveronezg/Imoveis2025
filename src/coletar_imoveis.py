@@ -4,11 +4,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+from utils import data_save
 import time
 import csv
 import os
 
-from config.config import data_save
 
 def colher_dados(arquivo_csv):
     pagina = 1  # contador de páginas
